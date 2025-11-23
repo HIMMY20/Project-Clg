@@ -4,7 +4,6 @@ import "../Component/Css.css";
 
 const Navbar = () => {
   const [isLogin, setIsLogin] = useState(false);
-  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const token = localStorage.getItem("token");
@@ -17,29 +16,45 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="pro-navbar">
-      <div className="nav-container">
-        <div className={`nav-left ${menuOpen ? "active" : ""}`}>
-          <Link to="/" className="nav-logo">Lost & Found</Link>
-          <Link to="/" className="nav-item">Home</Link>
-          <Link to="/list" className="nav-item">Lost & Found Items</Link>
-          <Link to="/contact" className="nav-item">Contact</Link>
-        </div>
+    <nav className="navbar navbar-expand-lg navbar-dark" style={{ backgroundColor: "#0b0f1a" }}>
+      <div className="container">
+        <Link to="/" className="navbar-brand fw-bold">Lost & Found</Link>
+        <button
+          className="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span className="navbar-toggler-icon"></span>
+        </button>
 
-        <div className={`nav-right ${menuOpen ? "active" : ""}`}>
-          {!isLogin && <Link to="/loginpage" className="nav-btn login">Login</Link>}
-          {!isLogin && <Link to="/registerpage" className="nav-btn register">Register</Link>}
-          {isLogin && (
-            <button className="nav-btn logout" onClick={handleLogout}>
-              Logout
-            </button>
-          )}
-        </div>
+        <div className="collapse navbar-collapse" id="navbarNav">
+          <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+            <li className="nav-item">
+              <Link to="/" className="nav-link">Home</Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/list" className="nav-link">Lost & Found Items</Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/contact" className="nav-link">Contact</Link>
+            </li>
+          </ul>
 
-        <div className={`hamburger ${menuOpen ? "active" : ""}`} onClick={() => setMenuOpen(!menuOpen)}>
-          <div></div>
-          <div></div>
-          <div></div>
+          <div className="d-flex">
+            {!isLogin && (
+              <>
+                <Link to="/loginpage" className="btn btn-success me-2">Login</Link>
+                <Link to="/registerpage" className="btn btn-info">Register</Link>
+              </>
+            )}
+            {isLogin && (
+              <button className="btn btn-danger" onClick={handleLogout}>Logout</button>
+            )}
+          </div>
         </div>
       </div>
     </nav>
