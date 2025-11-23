@@ -1,0 +1,398 @@
+/* ----------------------- */
+/* GLOBAL THEME (UPDATED) */
+/* ----------------------- */
+
+:root {
+  --dark-blue: #eef3fb;       /* Light premium background */
+  --navy-blue: #102a57;       /* Keep same for navbar/cards */
+  --light-blue: #3a6cf4;
+  --white: #ffffff;
+  --gray: #4c5a70;           /* darker gray for readability */
+  --radius: 12px;
+}
+
+body {
+  background: var(--dark-blue);   /* Light clean background */
+  color: #0A1A3A;                 /* Dark text for readability */
+  font-family: "Inter", sans-serif;
+}
+
+
+/* Remove ugly bootstrap bg */
+.bg-body-tertiary {
+  background: var(--navy-blue) !important;
+}
+
+/* ================================ */
+/*        PROFESSIONAL NAVBAR       */
+/* ================================ */
+
+:root {
+  --nav-bg: #0b0f1a;
+  --text-white: #ffffff;
+  --text-light: #d3d3d3;
+  --accent-blue: #3fa9f5;
+}
+
+.pro-navbar {
+  width: 100%;
+  background: var(--nav-bg);
+  padding: 12px 0;
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.35);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-container {
+  width: 92%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* LEFT SIDE */
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.nav-logo {
+  color: var(--text-white);
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+/* NAV ITEMS */
+.nav-item {
+  position: relative;
+  color: var(--text-light);
+  font-size: 1rem;
+  text-decoration: none;
+  transition: 0.25s ease;
+}
+
+.nav-item:hover {
+  color: var(--text-white);
+}
+
+/* Underline hover */
+.nav-item::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0%;
+  height: 2px;
+  background: var(--accent-blue);
+  transition: 0.3s ease;
+}
+
+.nav-item:hover::after {
+  width: 100%;
+}
+
+/* RIGHT SIDE BUTTONS */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.nav-btn {
+  padding: 5px 16px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+/* LOGIN BUTTON */
+.nav-btn.login {
+  border: 1.5px solid green;
+  color: white;
+}
+
+.nav-btn.login:hover {
+  background: green;
+  color: white;
+}
+
+/* REGISTER BUTTON */
+.nav-btn.register {
+  border: 1.5px solid #46c3e6;
+  color: #46c3e6;
+}
+
+.nav-btn.register:hover {
+  background: #12bfef;
+  color: white;
+}
+
+/* LOGOUT BUTTON */
+.nav-btn.logout {
+  border: 1.5px solid #dc1717;
+  color: white;
+  background: transparent;
+  cursor: pointer;
+}
+
+.nav-btn.logout:hover {
+  background: #f23b3b;
+  color: white;
+}
+
+
+
+/* ----------------------- */
+/* HOME PAGE */
+/* ----------------------- */
+h1 {
+  margin-top: 30px;
+  text-align: center;
+  font-size: 2.5rem;
+  color: black;
+}
+
+p {
+  text-align: center;
+  color: grey;
+  font-size: 1.1rem;
+}
+
+/* ----------------------- */
+/* LIST PAGE – Light Clean Theme */
+/* ----------------------- */
+
+.list-wrapper {
+  background: #f3f6fb;
+  padding: 30px 10px;
+  border-radius: 12px;
+  margin: 20px 10px;
+}
+
+h3 {
+  margin: 20px 0;
+  text-align: center;
+  color: #0b0f1a;
+  font-size: 1.9rem;
+  font-weight: 700;
+}
+
+.Card-body-body {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+  padding: 20px;
+}
+
+/* CARD */
+.card {
+  background: #ffffff;
+  color: #333;
+  border: none;
+  border-radius: 14px;
+  width: 260px;
+
+  /* FIXED HEIGHT */
+  height: 380px;
+
+  display: flex;
+  flex-direction: column;
+
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  transition: 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+/* IMAGE */
+.card-img-top {
+  height: 150px;
+  object-fit: cover;
+  border-radius: 14px 14px 0 0;
+}
+
+/* CARD BODY FIX — TO ALIGN BUTTON BOTTOM */
+.card-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* TITLE */
+.card-title {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #222;
+}
+
+/* TEXT */
+.card-text {
+  color: #666;
+  font-size: 0.95rem;
+
+  /* Keep spacing clean */
+  margin-bottom: auto;
+}
+
+/* BUTTON ALWAYS BOTTOM */
+.btn-primary {
+  margin-top: auto;
+  background: var(--light-blue) !important;
+  border: none;
+}
+
+.btn-primary:hover {
+  background: #1e4fe3 !important;
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  .card {
+    width: 100% !important;
+  }
+}
+
+
+/* ----------------------- */
+/* LOGIN + REGISTER FORM */
+/* ----------------------- */
+.login-contain {
+  width: 100%;
+  max-width: 430px;
+  background: var(--navy-blue);
+  margin: 40px auto;
+  padding: 30px;
+  border-radius: var(--radius);
+  color: var(--white);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+  text-align: center;
+}
+
+.login-form input {
+  width: 100%;
+  margin: 12px 0;
+  padding: 12px;
+  border-radius: var(--radius);
+  border: 1px solid #375891;
+  background: #133166;
+  color: var(--white);
+}
+
+.login-form input::placeholder {
+  color: var(--gray);
+}
+
+.login-form input[type="submit"] {
+  background: var(--light-blue);
+  border: none;
+  color: var(--white);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.login-form input[type="submit"]:hover {
+  background: #1f52e8;
+}
+
+.login-form button {
+  margin-top: 10px;
+  background: transparent;
+  border: 1px solid var(--gray);
+  padding: 10px 20px;
+  color: var(--gray);
+  border-radius: var(--radius);
+  cursor: pointer;
+}
+
+.login-form button:hover {
+  border-color: var(--white);
+  color: var(--white);
+}
+
+/* Wrapper */
+.contact-wrapper {
+  min-height: 100vh;
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #f8fafc, #eef2ff);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Title */
+.contact-title {
+  font-size: 42px;
+  font-weight: 700;
+  margin-bottom: 5px;
+  color: #1e1e1e;
+}
+
+.contact-subtitle {
+  font-size: 16px;
+  color: #636363;
+  margin-bottom: 40px;
+}
+
+/* Cards Container */
+.contact-cards {
+  display: grid;
+  gap: 25px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  width: 100%;
+  max-width: 1000px;
+}
+
+/* Card */
+.contact-card {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(15px);
+  border-radius: 18px;
+  padding: 28px 25px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.07);
+  transition: 0.3s ease;
+  text-align: center;
+}
+
+.contact-card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.12);
+}
+
+/* Icon Box */
+.icon-box {
+  width: 65px;
+  height: 65px;
+  margin: 0 auto 15px;
+  border-radius: 15px;
+  background: #4f46e5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  color: #fff;
+  box-shadow: 0 6px 12px rgba(79, 70, 229, 0.4);
+}
+
+/* Text */
+.contact-card h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 8px;
+}
+
+.contact-card p {
+  color: #5e5e5e;
+  font-size: 15px;
+  line-height: 22px;
+}
