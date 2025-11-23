@@ -1,33 +1,14 @@
-/* ----------------------- */
-/* GLOBAL THEME (UPDATED) */
-/* ----------------------- */
-
-:root {
-  --dark-blue: #eef3fb;       /* Light premium background */
-  --navy-blue: #102a57;       /* Keep same for navbar/cards */
-  --light-blue: #3a6cf4;
-  --white: #ffffff;
-  --gray: #4c5a70;           /* darker gray for readability */
-  --radius: 12px;
-}
-
-body {
-  background: var(--dark-blue);   /* Light clean background */
-  color: #0A1A3A;                 /* Dark text for readability */
-  font-family: "Inter", sans-serif;
-}
-
-
-/* Remove ugly bootstrap bg */
-.bg-body-tertiary {
-  background: var(--navy-blue) !important;
-}
-
 /* ================================ */
 /*        PROFESSIONAL NAVBAR       */
 /* ================================ */
 
 :root {
+  --dark-blue: #eef3fb;
+  --navy-blue: #102a57;
+  --light-blue: #3a6cf4;
+  --white: #ffffff;
+  --gray: #4c5a70;
+  --radius: 12px;
   --nav-bg: #0b0f1a;
   --text-white: #ffffff;
   --text-light: #d3d3d3;
@@ -79,7 +60,6 @@ body {
   color: var(--text-white);
 }
 
-/* Underline hover */
 .nav-item::after {
   content: "";
   position: absolute;
@@ -144,6 +124,61 @@ body {
 .nav-btn.logout:hover {
   background: #f23b3b;
   color: white;
+}
+
+/* ----------------------- */
+/* MOBILE RESPONSIVE       */
+/* ----------------------- */
+
+@media (max-width: 768px) {
+  .nav-left,
+  .nav-right {
+    display: none;
+  }
+
+  .nav-left.active,
+  .nav-right.active {
+    display: flex;
+    flex-direction: column;
+    background: var(--nav-bg);
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    width: 200px;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+    gap: 15px;
+  }
+
+  /* Hamburger button */
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 28px;
+    height: 22px;
+    cursor: pointer;
+  }
+
+  .hamburger div {
+    width: 100%;
+    height: 3px;
+    background: var(--text-white);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+  }
+
+  /* Animate hamburger to X on open */
+  .hamburger.active div:nth-child(1) {
+    transform: rotate(45deg) translateY(8px);
+  }
+  .hamburger.active div:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger.active div:nth-child(3) {
+    transform: rotate(-45deg) translateY(-8px);
+  }
 }
 
 
