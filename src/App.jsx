@@ -30,25 +30,25 @@ function App() {
  return(
   <>
      <BrowserRouter>
-     {islogin &&<Navbar/>}
+     {/* {islogin &&<Navbar/>} */}
      <Routes>
-      {islogin ? (
-         <>
+      {/* {islogin ? (
+         <> */}
             <Route path='/loginpage' element={<Loginpage/>}></Route>
             <Route path='/registerpage' element={<Registerpage/>}></Route>
              <Route path='/' element={<Home/>}></Route>
          <Route path='/list' element={<List/>}></Route>
          <Route path='/contact' element={<Contact/>}></Route>
             
-         </>
+         {/* </>
       ):(
-         <>
-            <Route path='*' element={<Loginpage/>}></Route>
+         <> */}
+            {/* <Route path='*' element={<Loginpage/>}></Route>
         
          <Route path='/loginpage' element={<Loginpage/>}></Route>
             <Route path='/registerpage' element={<Registerpage/>}></Route>
          </>
-      )}
+      )} */}
 
      </Routes>
      </BrowserRouter>
